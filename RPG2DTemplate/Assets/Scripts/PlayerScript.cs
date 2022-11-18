@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] private int playerLevel = 1;
     [SerializeField] private int playerXP = 0;
-    [SerializeField] private float[] requriedXP = new float[99 /*Max level is +1*/];
+    [SerializeField] private float[] requriedXP = new float[99 /*Max level == requiredXP.length*/];
     private float nextLevelXP;
     private float playerXPPercentage = 1f;
 
