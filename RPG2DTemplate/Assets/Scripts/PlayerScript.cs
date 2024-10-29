@@ -70,6 +70,10 @@ public class PlayerScript : MonoBehaviour
         playerHealth -= damageTaken;
 
         DisplayPlayerHealth();
+
+        if(playerHealth >= 0) {
+            PlayerDeath();
+        }
     }
 
     public int GetPlayerLevel => playerLevel;
@@ -98,8 +102,6 @@ public class PlayerScript : MonoBehaviour
         GameManager.instance.playerHPText.GetComponent<TextMeshProUGUI>().text = $"HP: {playerHealth}";
 
         playerHealthPercentage = playerHealth / maxPlayerHealth;
-
-        Debug.Log(playerHealthPercentage);
 
         RectTransform HPBarRect = GameManager.instance.playerHPBar.GetComponent<RectTransform>();
 
